@@ -1,0 +1,110 @@
+@mixin align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
+.outer-signup {
+  width: 100%;
+  height: 100vh;
+  @include align-center;
+  .CreateAccountBox {
+    column-gap: 3rem;
+    display: flex;
+    // grid-template-columns: 6fr 4fr;
+    justify-content: center;
+    border: solid 0.75px rgb(212, 212, 212);
+    border-radius: 0.5rem;
+    padding: 3rem;
+    min-height: 50vh;
+    min-width: 30vw;
+    .mainContent {
+      flex: 6;
+      form {
+        .name,
+        .username,
+        .password,
+        h2,
+        .password-checkbox,
+        .form-buttons {
+          padding: 1.25rem 0;
+        }
+        .name,
+        .username,
+        .password,
+        h2 {
+          @include vertical-flex;
+          .nameInput,
+          .pwdInput,
+          .password-checkbox {
+            display: flex;
+            align-items: center;
+          }
+          .nameInput,
+          .pwdInput,
+          .unameInput {
+            column-gap: 1.25rem;
+            input {
+              @include inputBox;
+            }
+            input:focus {
+              border: solid 1.25px #4285f4;
+            }
+          }
+          .password-checkbox {
+            #showPwd {
+              border: solid 5rem #000;
+              
+            }
+            label {
+              font-size: 0.85rem;
+              margin-left: 0.25rem;
+            }
+          }
+          small {
+            @include smalltag;
+          }
+        }
+        h2 {
+          @include header-font;
+        }
+
+        .form-buttons {
+          display: flex;
+          justify-content: space-between;
+          button {
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            @include general-font;
+            font-weight: 700;
+          }
+          #sign-in {
+            padding: 0.75rem;
+
+            color: #4285f4;
+            background-color: inherit;
+          }
+          #sign-up {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 0.75rem 1.75rem;
+          }
+        }
+      }
+    }
+    .sideContent {
+      flex: 4;
+      @include vertical-flex;
+      align-items: center;
+      text-align: center;
+      p {
+        @include subtext-font;
+        font-size: larger;
+      }
+    }
+  }
+}
