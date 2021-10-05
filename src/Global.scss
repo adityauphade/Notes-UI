@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@100;300;400;500;700&display=swap");
 @mixin header-font {
   font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
 }
 @mixin subtext-font {
   font-family: "Open Sans", sans-serif;
@@ -14,14 +14,20 @@
 
 //for input box in forms
 @mixin inputBox {
-  width: 100%;
-  padding: 0.75rem 0.5rem;
-  border: solid 1.25px rgb(221, 221, 221);
-  border-radius: 0.25rem;
+  input {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    border: solid 1.25px rgb(221, 221, 221);
+    border-radius: 0.25rem;
+  }
+  input:focus{
+    outline-style: none;
+    border: solid 1.25px #4285f4;
+  }
 }
 
 // For Small tags
 @mixin smalltag {
   color: #838383;
-  padding: 0.15rem 0;
+  padding: 0.25rem 0 0 0.2rem;
 }

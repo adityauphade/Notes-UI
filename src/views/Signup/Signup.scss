@@ -67,12 +67,7 @@
             @media screen and (max-width: 429px) {
                 // column-gap: 1rem;
             }
-            input {
-              @include inputBox;
-            }
-            input:focus {
-              border: solid 1.25px #4285f4;
-            }
+            @include inputBox;
           }
           .password-checkbox {
             #showPwd {
@@ -104,14 +99,20 @@
           }
           #sign-in {
             padding: 0.75rem;
-
             color: #4285f4;
             background-color: inherit;
-          }
+          }   
+          #sign-in:hover{
+            // color: #3566B8;
+            background-color: rgba(240, 252, 255, 0.377);
+          }       
           #sign-up {
             background-color: #4285f4;
             color: #fff;
             padding: 0.75rem 1.75rem;
+          }
+          #sign-up:hover{
+            background-color: #3566B8;
           }
         }
       }
