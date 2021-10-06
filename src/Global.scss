@@ -11,6 +11,15 @@
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+@mixin align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
 
 //for input box in forms
 @mixin inputBox {
@@ -56,4 +65,51 @@
 @mixin smalltag {
   color: #838383;
   padding: 0.25rem 0 0 0.2rem;
+}
+
+// For create google A/c Box
+@mixin outer-box {
+  border: solid 0.75px rgb(212, 212, 212);
+  border-radius: 0.5rem;
+  padding: 3rem;
+  min-height: 30vh;
+  min-width: 25vw;
+  @media screen and (max-width: 834px) {
+    width: 95vw;
+  }
+  @media screen and (max-width: 429px) {
+    width: 100vw;
+    border: none;
+    padding: 1rem;
+  }
+}
+
+//for button styling
+@mixin button-styling {
+  display: flex;
+  justify-content: space-between;
+  button {
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    @include general-font;
+    font-weight: 700;
+  }
+  button[type="transparent"] {
+    padding: 0.75rem;
+    color: #4285f4;
+    background-color: inherit;
+  }
+  button[type="transparent"]:hover {
+    // color: #3566B8;
+    background-color: rgba(240, 252, 255, 0.377);
+  }
+  button[type="solid"] {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 0.75rem 1.75rem;
+  }
+  button[type="solid"]:hover {
+    background-color: #3566b8;
+  }
 }
