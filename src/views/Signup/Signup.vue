@@ -49,27 +49,43 @@
 
           <div class="name">
             <div class="nameInput">
-              <input type="text" id="firstName" placeholder="First Name" />
-              <input type="text" id="lastName" placeholder="Last Name" />
+              <div class="input-box">
+                <input type="text" id="firstName" placeholder=" " />
+                <label for="firstName">First Name</label>
+              </div>
+              <div class="input-box">
+                <input type="text" id="lastName" placeholder=" " />
+                <label for="lastName">Last Name</label>
+              </div>
             </div>
             <small></small>
           </div>
 
           <div class="username">
             <div class="unameInput">
-              <input type="text" id="userName" placeholder="Username" />
+              <div class="input-box">
+                <input type="text" id="userName" placeholder=" " />
+                <label for="userName">Username</label>
+              </div>
             </div>
             <small>You can use letters, numbers & periods</small>
           </div>
 
           <div class="password">
             <div class="pwdInput">
-              <input type="text" id="pwd1" placeholder="Password" />
-              <input type="text" id="pwd2" placeholder="Confirm" />
+              <div class="input-box">
+                <input type="text" id="pwd1" placeholder=" " />
+                <label for="pwd1">Password</label>
+              </div>
+              <div class="input-box">
+                <input type="text" id="pwd2" placeholder=" " />
+                <label for="pwd2">Confirm</label>
+              </div>
             </div>
             <small
               >Use 8 or more characters with a mix of letters, numbers &
-              symbols</small>
+              symbols</small
+            >
             <div class="password-checkbox">
               <input type="checkbox" name="showPwd" id="showPwd" />
               <label for="showPwd">Show Password</label>
@@ -95,6 +111,11 @@
 <script>
 export default {
   name: "Signup",
+  data(){
+    return{
+      Name: ''
+    }
+  }
 };
 </script>
 

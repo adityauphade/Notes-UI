@@ -14,15 +14,41 @@
 
 //for input box in forms
 @mixin inputBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  label {
+    position: absolute;
+    left: 10px;
+    padding: 0.625rem 0;
+    font-size: 0.9rem;
+    color: #5f6368;
+    pointer-events: none;
+    // transition: 0.1s;
+  }
   input {
     width: 100%;
     padding: 0.75rem 0.5rem;
     border: solid 1.25px rgb(221, 221, 221);
     border-radius: 0.25rem;
   }
-  input:focus{
-    outline-style: none;
-    border: solid 1.25px #4285f4;
+  input:focus ~ label,
+  // input:valid ~ label,
+  // input:not([value=""]) ~ label,
+  input:not(:placeholder-shown) ~ label {
+    top: -1rem;
+    left: 10px;
+    color: #4285f4;
+    font-size: 0.75rem;
+    background-color: white;
+    height: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  input:focus {
+    outline: none;
+    border: 2px solid #4285f4;
   }
 }
 
