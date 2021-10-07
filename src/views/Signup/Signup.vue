@@ -1,5 +1,5 @@
 <template>
-  <div class="outer-signup">
+  <div class="outer-page">
     <div class="CreateAccountBox">
       <div class="mainContent">
         <form>

@@ -3,12 +3,12 @@
     <div class="CreateAccountBox">
       <form>
         <img width="110" src="@/assets/Fundoo-logo.png" alt="" />
-        <h2>Sign In</h2>
-        <div class="email">
-          <div class="emailInput">
+        <h2>Reset Password</h2>
+        <div class="password">
+          <div class="pwdInput">
             <div class="input-box">
-              <input type="text" id="email" placeholder=" " />
-              <label for="email">Email</label>
+              <input type="password" id="password" placeholder=" " />
+              <label for="password">Password</label>
             </div>
           </div>
           <small></small>
@@ -17,16 +17,11 @@
         <div class="password">
           <div class="pwdInput">
             <div class="input-box">
-              <input type="text" id="pwd" placeholder=" " />
-              <label for="pwd">Password</label>
+              <input type="password" id="confirmPwd" placeholder=" " />
+              <label for="confirmPwd">Confirm</label>
             </div>
           </div>
-          <div class="password-footer">
-            <small></small>
-            <button type="transparent" id="forget-password">
-              <a href="">Forget password?</a>
-            </button>
-          </div>
+          <small></small>
         </div>
         <div class="form-buttons">
           <button type="transparent" id="sign-in">Sign in instead</button>
@@ -39,11 +34,11 @@
 
 <script>
 export default {
-  name: "Login",
+  name: "Reset",
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/Global.scss";
-@import "./Login.scss";
+@import "../Login/Login.scss";
 </style>

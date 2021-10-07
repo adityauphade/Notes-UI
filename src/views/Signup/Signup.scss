@@ -1,13 +1,9 @@
-
-.outer-signup {
-  width: 100%;
-  height: 100vh;
-  @include align-center;
+.outer-page {
   .CreateAccountBox {
-    display: flex;
-    justify-content: center;
     column-gap: 3rem;
-    @include outer-box;
+    @media screen and (max-width: 834px) {
+      width: 90vw;
+    }
     .mainContent {
       flex: 6;
       form {
