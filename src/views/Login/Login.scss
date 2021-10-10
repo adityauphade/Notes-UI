@@ -19,16 +19,22 @@
           @include inputBox;
         }
       }
-      h2 {
+      h2, h3 {
         @include header-font;
       }
-      h2,
+      h2, h3,
       .password-checkbox,
       .form-buttons {
         padding: 2rem 0;
         .input-box {
           @include inputBox;
         }
+      }
+      h3{
+        padding-top: 0
+      }
+      h2{
+        padding-bottom: 0.5rem
       }
       .password {
         small {

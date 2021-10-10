@@ -4,6 +4,7 @@
       <form>
         <img width="110" src="@/assets/Fundoo-logo.png" alt="" />
         <h2>Sign In</h2>
+        <h3>Use your Google Account</h3>
         <div class="email">
           <div class="emailInput">
             <div class="input-box">
