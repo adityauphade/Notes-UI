@@ -7,38 +7,53 @@
         <div class="password">
           <div class="pwdInput">
             <div class="input-box">
-              <input type="password" id="password" placeholder=" " />
+              <input
+                :class="[v$.form.password.$error ? 'error' : '']"
+                type="text"
+                id="password"
+                placeholder=" "
+                v-model="form.password"
+              />
               <label for="password">Password</label>
             </div>
+            <small v-if="v$.form.password.$error"
+              ><i class="bi bi-exclamation-circle-fill"></i>
+              {{ v$.form.password.$errors[0].$message }}</small
+            >
           </div>
-          <small></small>
         </div>
 
         <div class="password">
           <div class="pwdInput">
             <div class="input-box">
-              <input type="password" id="confirmPwd" placeholder=" " />
-              <label for="confirmPwd">Confirm</label>
+              <input
+                :class="[v$.form.confirmpwd.$error ? 'error' : '']"
+                type="text"
+                id="confirmpwd"
+                placeholder=" "
+                v-model="form.confirmpwd"
+              />
+              <label for="confirmpwd">Confirm</label>
             </div>
+            <small v-if="v$.form.confirmpwd.$error"
+              ><i class="bi bi-exclamation-circle-fill"></i>
+              {{ v$.form.confirmpwd.$errors[0].$message }}</small
+            >
           </div>
-          <small></small>
         </div>
         <div class="form-buttons">
-          <button type="transparent" id="sign-in">Sign in instead</button>
-          <button type="solid" id="sign-up">Next</button>
+          <!-- <button type="transparent" id="sign-in">Sign in instead</button> -->
+          <button @click="onSubmit" type="solid" id="reset">Change Password</button>
         </div>
       </form>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "Reset",
-};
-</script>
+<script type='module' src='./Reset.js'></script>
 
 <style lang="scss" scoped>
 @import "@/Global.scss";
+@import "./Reset.scss";
 @import "../Login/Login.scss";
 </style>
