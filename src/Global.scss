@@ -59,12 +59,19 @@
     outline: none;
     border: 2px solid #4285f4;
   }
+  input.error{
+    border: 2px solid #FC3232;
+  }
+  input.error ~ label{
+    color: #FC3232;
+  }
 }
 
 // For Small tags
 @mixin smalltag {
-  color: #838383;
-  padding: 0.25rem 0 0 0.2rem;
+  color: #FC3232;
+  padding: 0.3rem 0 0 0;
+  display: block;
 }
 
 // For create google A/c Box
