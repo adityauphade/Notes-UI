@@ -38,7 +38,7 @@ export default {
         },
         password: {
           required,
-          min: minLength(6),
+          min: minLength(3),
         },
         confirmpwd: {
           required,
@@ -56,20 +56,27 @@ export default {
       } else {
         console.log("SUCCESS");
         let data = {
-          fname: "Bhaya",
-          lname: "Patani",
-          email: "bhaya@patanigmail.com",
-          password: "IloveMOmos",
+          fname: this.form.name.fname,
+          lname: this.form.name.fname,
+          email: this.form.email,
+          password: this.form.password,
         };
         axios
           .post("http://localhost:3000/NotesApp/Signup", data)
           .then((res) => {
             console.log(res);
+            this.$router.push('/Login')
           })
           .catch((err) => console.error(err));
-        //connect to db
-        //check if there is a login value => if yes; dashboard
+        
       }
     },
+    hidePassword(){
+      var x = document.getElementById('password')
+      var y = document.getElementById('confirmpwd')
+      if(x.type === 'password'){
+        x.type = y.type  = 'text'
+      }else{x.type = y.type = 'password'}
+    }
   },
 };

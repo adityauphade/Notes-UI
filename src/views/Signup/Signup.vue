@@ -73,7 +73,7 @@
                 <div class="input-box">
                   <input
                     :class="[v$.form.password.$error ? 'error' : '']"
-                    type="text"
+                    type="password"
                     id="password"
                     placeholder=" "
                     v-model="form.password"
@@ -81,17 +81,15 @@
                   <label for="password">Password</label>
                 </div>
                 <small
-                  v-if="v$.form.password.$error"
-                  :class="[v$.form.password.$error ? 'error' : '']"
-                  ><i class="bi bi-exclamation-circle-fill"></i> {{ v$.form.password.$errors[0].$message }}</small
-                >
+                  :class="[v$.form.password.$error ? 'error' : 'hide']"
+                  ><i class="bi bi-exclamation-circle-fill"></i> {{ v$.form.password.$error ? v$.form.password.$errors[0].$message : ''}}</small>
               </div>
 
               <div class="confirmpwd">
                 <div class="input-box">
                   <input
                     :class="[v$.form.confirmpwd.$error ? 'error' : '']"
-                    type="text"
+                    type="password"
                     id="confirmpwd"
                     placeholder=" "
                     v-model="form.confirmpwd"
@@ -104,18 +102,18 @@
               </div>
             </div>
             <small
-              v-if="!(v$.form.password.$error || v$.form.confirmpwd.$error)"
+            :class="[!(v$.form.password.$error || v$.form.confirmpwd.$error) ? '' : 'hide']"
               >Use 8 or more characters with a mix of letters, numbers &
               symbols</small
             >
             <div class="password-checkbox">
-              <input type="checkbox" name="showPwd" id="showPwd" />
+              <input @click="hidePassword" type="checkbox" name="showPwd" id="showPwd" />
               <label for="showPwd">Show Password</label>
             </div>
           </div>
           <div class="form-buttons">
-            <button type="transparent" id="sign-in">Sign in instead</button>
-            <button @click="onLogin" type="solid" id="sign-up">Next</button>
+            <button type="button" @click="this.$router.push('/Login')" class="transparent" id="sign-in">Sign in instead</button>
+            <button type="button" @click="onLogin" class="solid" id="sign-up">Next</button>
           </div>
         </form>
       </div>

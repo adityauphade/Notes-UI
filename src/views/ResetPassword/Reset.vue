@@ -43,7 +43,7 @@
         </div>
         <div class="form-buttons">
           <!-- <button type="transparent" id="sign-in">Sign in instead</button> -->
-          <button @click="onSubmit" type="solid" id="reset">Change Password</button>
+          <button @click="onSubmit" class="solid" type="button" id="reset">Change Password</button>
         </div>
       </form>
     </div>

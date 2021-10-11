@@ -42,12 +42,12 @@
             >
           </div>
           <div class="password-footer">
-            <!-- <button @click="this.$router.push({ path: 'ForgotPassword' })" type="transparent" id="forget-password">Forget password?</button> -->
+            <button @click="this.$router.push('/ForgotPassword')" type="button" class="transparent" id="forget-password">Forget password?</button>
           </div>
         </div>
         <div class="form-buttons">
-          <button @click="window.location.href='/signup'" type="transparent" id="sign-up">Sign up instead?</button>
-          <button @click="onLogin" type="solid" id="sign-in">Login</button>
+          <button @click="this.$router.push('/Signup')" type="button" class="transparent" id="sign-up">Sign up instead?</button>
+          <button @click="onLogin" type="button" class="solid" id="sign-in">Login</button>
         </div>
       </form>
     </div>

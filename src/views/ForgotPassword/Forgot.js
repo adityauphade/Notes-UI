@@ -36,8 +36,6 @@ export default {
         axios.post('http://localhost:3000/NotesApp/ForgotPassword', this.form)
         .then((res) => console.log(res))
         .catch((err) => console.error(err))
-        //connect to db
-        //check if there is a login value => if yes; dashboard 
       }
       // console.log(email)
     }

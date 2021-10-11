@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-buttons">
-          <button @click="onSubmit" type="solid" id="reset">Next</button>
+          <button @click="onSubmit" type="button" class='solid' id="reset">Next</button>
         </div>
       </form>
     </div>
