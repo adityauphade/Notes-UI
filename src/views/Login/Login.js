@@ -1,5 +1,6 @@
 import useVuelidate from '@vuelidate/core'
 import { required, email, minLength } from '@vuelidate/validators'
+import axios from "axios"
 
 export default {
   setup () {
@@ -23,7 +24,7 @@ export default {
         },
         password: {
             required, 
-            min: minLength(6)
+            min: minLength(3)
         },
       },
     }
@@ -37,10 +38,12 @@ export default {
       }
       else{
         console.log("SUCCESS")
-        //connect to db
-        //check if there is a login value => if yes; dashboard 
+        axios.post("http://localhost:3000/NotesApp/Login", this.form)
+        .then(res => {
+          console.log(res);
+          // window.location.href = '#dashboard = AS LOGGED IN SUCCESSFULLY'; 
+        }).catch(err => console.error(err))
       }
-      // console.log(email)
     }
   }
   

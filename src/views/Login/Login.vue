@@ -29,7 +29,7 @@
             <div class="input-box">
               <input
                 :class="[v$.form.password.$error ? 'error' : '']"
-                type="text"
+                type="password"
                 id="password"
                 placeholder=" "
                 v-model="form.password"
@@ -42,13 +42,11 @@
             >
           </div>
           <div class="password-footer">
-            <button type="transparent" id="forget-password">
-              <a href="">Forget password?</a>
-            </button>
+            <!-- <button @click="this.$router.push({ path: 'ForgotPassword' })" type="transparent" id="forget-password">Forget password?</button> -->
           </div>
         </div>
         <div class="form-buttons">
-          <button type="transparent" id="sign-up">Sign up instead?</button>
+          <button @click="window.location.href='/signup'" type="transparent" id="sign-up">Sign up instead?</button>
           <button @click="onLogin" type="solid" id="sign-in">Login</button>
         </div>
       </form>

@@ -20,12 +20,25 @@
         .password,
         h2 {
           @include vertical-flex;
-
+          small {
+            @include smalltag;
+            color: #6C6F71;
+          }
+          small.error{
+            color: #FC3232;
+          }
           .nameInput,
           .pwdInput,
           .unameInput {
+            .lname, .fname, .pwd, .confirmpwd{
+              width: 100%;
+              small.hide{
+                opacity: 0;
+              }
+            }
             display: flex;
             align-items: center;
+            // flex-direction: column;
             column-gap: 1.25rem;
             .input-box {
               @include inputBox;
@@ -47,9 +60,6 @@
               font-size: 0.85rem;
               margin-left: 0.25rem;
             }
-          }
-          small {
-            @include smalltag;
           }
         }
         h2 {

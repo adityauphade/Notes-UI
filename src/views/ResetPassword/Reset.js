@@ -1,5 +1,8 @@
 import useVuelidate from "@vuelidate/core";
 import { required, minLength } from "@vuelidate/validators";
+import axios from "axios";
+// import axios from "axios"
+
 
 export default {
   setup() {
@@ -36,10 +39,11 @@ export default {
         console.log(this.v$);
       } else {
         console.log("SUCCESS");
-        //connect to db
-        //check if there is a login value => if yes; dashboard
+        console.log(this.$route.params.token)
+        axios.patch(`http://localhost:3000/NotesApp/ResetPassword/${this.$route.params.token}`, {password: this.form.password})
+        .then((res) => console.log(res))
+        .catch((err) => console.error(err))
       }
-      // console.log(confirmpwd)
     },
   },
 };

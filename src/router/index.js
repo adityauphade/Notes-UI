@@ -18,7 +18,7 @@ const routes = [
     component: () => import('../views/Signup/Signup.vue')
   },
   {
-    path: '/Reset',
+    path: '/Reset/:token',
     name: 'Reset',
     component: () => import('../views/ResetPassword/Reset.vue')
   },
