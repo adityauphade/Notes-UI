@@ -1,6 +1,6 @@
 import useVuelidate from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
-import axios from 'axios';
+import authFunctions from '@/services/auth-axios.js'
 
 export default {
   setup () {
@@ -32,12 +32,9 @@ export default {
         console.log(this.v$)
       }
       else{
+        authFunctions.getVerificationMail(this.form)
         console.log("SUCCESS")
-        axios.post('http://localhost:3000/NotesApp/ForgotPassword', this.form)
-        .then((res) => console.log(res))
-        .catch((err) => console.error(err))
       }
-      // console.log(email)
     }
   }
   

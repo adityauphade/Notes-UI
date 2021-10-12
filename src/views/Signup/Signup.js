@@ -1,6 +1,6 @@
 import useVuelidate from "@vuelidate/core";
 import { required, email, minLength, sameAs, helpers } from "@vuelidate/validators";
-import axios from "axios";
+import authFunctions from '@/services/auth-axios.js'
 
 export default {
   setup() {
@@ -55,22 +55,16 @@ export default {
         console.log(this.v$);
       } else {
         console.log("SUCCESS");
-        let data = {
+        let newUser = {
           fname: this.form.name.fname,
           lname: this.form.name.fname,
           email: this.form.email,
           password: this.form.password,
         };
-        axios
-          .post("http://localhost:3000/NotesApp/Signup", data)
-          .then((res) => {
-            console.log(res);
-            this.$router.push('/Login')
-          })
-          .catch((err) => console.error(err));
-        
+        authFunctions.addUser(newUser) && this.$router.push("/Login");
       }
     },
+
     hidePassword(){
       var x = document.getElementById('password')
       var y = document.getElementById('confirmpwd')
