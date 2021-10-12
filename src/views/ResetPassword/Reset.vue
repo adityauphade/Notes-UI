@@ -4,6 +4,7 @@
       <form>
         <img width="110" src="@/assets/Fundoo-logo.png" alt="" />
         <h2>Reset Password</h2>
+        <h3>Use your Google Account</h3>
         <div class="password">
           <div class="pwdInput">
             <div class="input-box">
@@ -16,9 +17,13 @@
               />
               <label for="password">Password</label>
             </div>
-            <small v-if="v$.form.password.$error"
+            <small :class="[v$.form.password.$error ? 'error' : 'hide']"
               ><i class="bi bi-exclamation-circle-fill"></i>
-              {{ v$.form.password.$errors[0].$message }}</small
+              {{
+                v$.form.password.$error
+                  ? v$.form.password.$errors[0].$message
+                  : ""
+              }}</small
             >
           </div>
         </div>
@@ -35,9 +40,11 @@
               />
               <label for="confirmpwd">Confirm</label>
             </div>
-            <small v-if="v$.form.confirmpwd.$error"
+            <small :class="[v$.form.confirmpwd.$error ? 'error' : 'hide']"
               ><i class="bi bi-exclamation-circle-fill"></i>
-              {{ v$.form.confirmpwd.$errors[0].$message }}</small
+              {{
+                v$.form.confirmpwd.$error ? v$.form.confirmpwd.$errors[0].$message : ""
+              }}</small
             >
           </div>
         </div>
