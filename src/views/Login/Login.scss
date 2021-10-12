@@ -37,6 +37,11 @@
         padding-bottom: 0.5rem
       }
       .email, .password {
+        .emailInput, .pwdInput{
+          small.hide{
+            opacity: 0;
+          }
+        }
         small {
           @include smalltag;
           @media screen and (max-width: 429px) {

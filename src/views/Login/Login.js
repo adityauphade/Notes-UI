@@ -31,14 +31,14 @@ export default {
   },
 
   methods: {
-    onLogin(){
+    async onLogin(){
       this.v$.$validate()
       if(this.v$.$error){
         console.log(this.v$)
       }
       else{
         console.log("SUCCESS")
-        axios.post("http://localhost:3000/NotesApp/Login", this.form)
+        await axios.post("/NotesApp/Login", this.form)
         .then(res => {
           console.log(res);
           // window.location.href = '#dashboard = AS LOGGED IN SUCCESSFULLY'; 

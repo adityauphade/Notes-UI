@@ -49,7 +49,7 @@ export default {
   },
 
   methods: {
-    onLogin() {
+    onSubmit() {
       this.v$.$validate();
       if (this.v$.$error) {
         console.log(this.v$);

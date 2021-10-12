@@ -101,8 +101,12 @@
                   ><i class="bi bi-exclamation-circle-fill"></i> {{ v$.form.confirmpwd.$error ? v$.form.confirmpwd.$errors[0].$message : ''}}</small>
               </div>
             </div>
+
+            <!-- :class="[!(v$.form.$error) ? '' : 'hide']" -->
+            
             <small
             :class="[!(v$.form.password.$error || v$.form.confirmpwd.$error) ? '' : 'hide']"
+            
               >Use 8 or more characters with a mix of letters, numbers &
               symbols</small
             >
@@ -113,7 +117,7 @@
           </div>
           <div class="form-buttons">
             <button type="button" @click="this.$router.push('/Login')" class="transparent" id="sign-in">Sign in instead</button>
-            <button type="button" @click="onLogin" class="solid" id="sign-up">Next</button>
+            <button type="button" @click="onSubmit" class="solid" id="sign-up">Next</button>
           </div>
         </form>
       </div>

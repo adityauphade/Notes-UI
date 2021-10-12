@@ -17,11 +17,13 @@
               />
               <label for="email">Email</label>
             </div>
+            <small :class="[v$.form.email.$error ? 'error' : 'hide']"
+              ><i class="bi bi-exclamation-circle-fill"></i>
+              {{
+                v$.form.email.$error ? v$.form.email.$errors[0].$message : ""
+              }}</small
+            >
           </div>
-          <small v-if="v$.form.email.$error"
-            ><i class="bi bi-exclamation-circle-fill"></i>
-            {{ v$.form.email.$errors[0].$message }}</small
-          >
         </div>
 
         <div class="password">
@@ -36,18 +38,38 @@
               />
               <label for="password">Password</label>
             </div>
-            <small v-if="v$.form.password.$error"
+            <small :class="[v$.form.password.$error ? 'error' : 'hide']"
               ><i class="bi bi-exclamation-circle-fill"></i>
-              {{ v$.form.password.$errors[0].$message }}</small
+              {{
+                v$.form.password.$error
+                  ? v$.form.password.$errors[0].$message
+                  : ""
+              }}</small
             >
           </div>
           <div class="password-footer">
-            <button @click="this.$router.push('/ForgotPassword')" type="button" class="transparent" id="forget-password">Forget password?</button>
+            <button
+              @click="this.$router.push('/ForgotPassword')"
+              type="button"
+              class="transparent"
+              id="forget-password"
+            >
+              Forget password?
+            </button>
           </div>
         </div>
         <div class="form-buttons">
-          <button @click="this.$router.push('/Signup')" type="button" class="transparent" id="sign-up">Sign up instead?</button>
-          <button @click="onLogin" type="button" class="solid" id="sign-in">Login</button>
+          <button
+            @click="this.$router.push('/Signup')"
+            type="button"
+            class="transparent"
+            id="sign-up"
+          >
+            Sign up instead?
+          </button>
+          <button @click="onLogin" type="button" class="solid" id="sign-in">
+            Login
+          </button>
         </div>
       </form>
     </div>
