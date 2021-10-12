@@ -1,6 +1,6 @@
 import useVuelidate from '@vuelidate/core'
 import { required, email, minLength } from '@vuelidate/validators'
-import axios from "axios"
+import authFunctions from '@/services/auth-axios.js'
 
 export default {
   setup () {
@@ -37,12 +37,8 @@ export default {
         console.log(this.v$)
       }
       else{
+        authFunctions.loginUser(this.form)
         console.log("SUCCESS")
-        await axios.post("/NotesApp/Login", this.form)
-        .then(res => {
-          console.log(res);
-          // window.location.href = '#dashboard = AS LOGGED IN SUCCESSFULLY'; 
-        }).catch(err => console.error(err))
       }
     }
   }

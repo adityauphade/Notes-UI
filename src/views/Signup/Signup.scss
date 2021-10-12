@@ -10,10 +10,16 @@
         .name,
         .username,
         .password,
-        h2,
         .password-checkbox,
         .form-buttons {
-          padding: 1.25rem 0;
+          padding: 1rem 0;
+        }
+        h2{
+          padding: 1rem 0 1.5rem 0;
+        }
+        #password-smalltext, #email-smalltext{
+          position: relative;
+          top: -1rem;
         }
         .name,
         .username,
@@ -48,7 +54,7 @@
             }
             @media screen and (max-width: 429px) {
               flex-direction: column;
-              row-gap: 1rem;
+              row-gap: 0.5rem;
             }
           }
           .password-checkbox {

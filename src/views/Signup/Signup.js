@@ -1,5 +1,5 @@
 import useVuelidate from "@vuelidate/core";
-import { required, email, minLength, sameAs } from "@vuelidate/validators";
+import { required, email, minLength, sameAs, helpers } from "@vuelidate/validators";
 import axios from "axios";
 
 export default {
@@ -38,11 +38,11 @@ export default {
         },
         password: {
           required,
-          min: minLength(3),
+          min: helpers.withMessage('Atleast 3 characters long', minLength(3)),
         },
         confirmpwd: {
           required,
-          sameAsPassword: sameAs(this.form.password)
+          sameAsPassword: helpers.withMessage('Both values should match', sameAs(this.form.password))
         },
       },
     };
