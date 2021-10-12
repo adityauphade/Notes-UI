@@ -1,0 +1,46 @@
+header {
+    background: #202124;
+    width: 100vw;
+    padding: 1rem 2rem;
+    border-bottom: solid 2px #5f6368;
+    @include flex-property;
+    flex-direction: row-wrap;
+    justify-content: space-between;
+    font-family: "Source Sans Pro", sans-serif;
+    .header-components {
+      @include flex-property;
+      h2 {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+      span {
+        padding: 0 0.75rem;
+        cursor: pointer;
+      }
+    }
+    #search-icons {
+      .search-box {
+        min-width: 65vw;
+        @include flex-property;
+        position: relative;
+        input {
+          position: relative;
+          width: 60%;
+          margin-right: 0;
+          right: 0;
+          outline: none;
+          background-color: #525355;
+          padding: 1.25rem 2rem 1.25rem 4rem;
+          border: none;
+          border-radius: 0.5rem;
+          color: #fff;
+          font-family: "Source Sans Pro", sans-serif;
+        }
+        span {
+          position: absolute;
+          left: 0.5rem;
+        }
+      }
+    }
+  }
