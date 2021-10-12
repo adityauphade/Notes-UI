@@ -1,46 +1,45 @@
-import useVuelidate from '@vuelidate/core'
-import { required, email, minLength } from '@vuelidate/validators'
-import authFunctions from '@/services/auth-axios.js'
+import useVuelidate from "@vuelidate/core";
+import { required, email, minLength, helpers } from "@vuelidate/validators";
+import authFunctions from "@/services/auth-axios.js";
 
 export default {
-  setup () {
-    return { v$: useVuelidate() }
+  setup() {
+    return { v$: useVuelidate() };
   },
 
   data() {
     return {
       form: {
-        email: '',
-        password: '',
+        email: "",
+        password: "",
       },
-    }
+    };
   },
-    
+
   validations() {
     return {
       form: {
         email: {
-           required, email 
+          required,
+          email,
         },
         password: {
-            required, 
-            min: minLength(3)
+          required,
+          min: helpers.withMessage("Atleast 3 characters long", minLength(3)),
         },
       },
-    }
+    };
   },
 
   methods: {
-    async onLogin(){
-      this.v$.$validate()
-      if(this.v$.$error){
-        console.log(this.v$)
+    async onLogin() {
+      this.v$.$validate();
+      if (this.v$.$error) {
+        console.log(this.v$);
+      } else {
+        authFunctions.loginUser(this.form);
+        console.log("SUCCESS");
       }
-      else{
-        authFunctions.loginUser(this.form)
-        console.log("SUCCESS")
-      }
-    }
-  }
-  
-}
+    },
+  },
+};
