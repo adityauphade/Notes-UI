@@ -1,7 +1,7 @@
 <template>
   <div class="side-nav" :class="[sidebarToggle ? 'expand' : '' ]">
-    <div class="icons">
-      <span class="material-icons md-light md-inactive">
+    <div @mouseover="active=!active" class="icons">
+      <span class="material-icons md-light" :class="[ active ? 'md-inactive' : '']">
         lightbulb
       </span>
       <label for="">Notes</label>

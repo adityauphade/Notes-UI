@@ -3,6 +3,7 @@
     <Nav v-on:changeSideBar="sidebarToggle=!sidebarToggle" />
     <div class="body-content">
       <SideNav :sidebarToggle="sidebarToggle" />
+      <DashboardContent/>
     </div>
   </div>
 </template>

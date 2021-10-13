@@ -2,7 +2,7 @@ header {
     background: #202124;
     width: 100%;
     padding: 1rem 0.5rem;
-    border-bottom: solid 2px #5f6368;
+    border-bottom: solid 1px #5f6368;
     @include flex-property;
     flex-direction: row-wrap;
     justify-content: space-between;
@@ -37,6 +37,14 @@ header {
           color: #fff;
           font-size: 1rem;
           font-family: "Source Sans Pro", sans-serif;
+          transition: all 0.05s linear;
+        }
+        input:focus{
+          background: #fff;
+          color: #525355;
+        }
+        input:focus ~ span{
+          color: #525355;
         }
         span {
           position: absolute;

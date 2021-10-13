@@ -5,20 +5,28 @@
     width: 4.5rem;
     // border-right: solid 2px #5f6368;
     overflow-x: hidden;
-    transition: all 0.1s ease-in;
+    transition: all 0.15s ease-in;
     .icons{
-        // flex: 2;
-        // width: 10rem;
+        cursor: pointer;
         display: flex;
-        padding: 2rem 1.55rem;
+        padding: 1rem 1.55rem;
+        margin: 1rem 0;
         align-items: center;
         label{
             color: #FFF;
             margin-left: 2rem;
+            font-family: "Source Sans Pro", sans-serif;
+            font-weight: 600;
         }
     }
+    .icons:hover{
+        cursor: pointer;
+        background: #41331c;
+        border-top-right-radius: 10rem;
+        border-bottom-right-radius: 10rem;
+    }
 }
-.side-nav.expand{
+.side-nav.expand, .side-nav:hover{
     width: 12rem;
     // .icons{
         // flex: 2;

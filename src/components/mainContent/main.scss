@@ -1,0 +1,102 @@
+.notes-dashboard {
+  width: 100%;
+  height: 100%;
+  .create-note {
+    margin: 2rem auto 1rem auto;
+    @include flex-property;
+    justify-content: center;
+    .input-box-default {
+      width: 45rem;
+      @include flex-property;
+      position: relative;
+      box-sizing: border-box;
+
+      input {
+        margin: auto;
+        outline: none;
+        border: solid 1px #5f6368;
+        background-color: #202124;
+        padding: 0.75rem 1rem;
+        width: 100%;
+        border-radius: 0.5rem;
+        color: #b8bdbe;
+        font-size: 1rem;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: 600;
+        transition: all 0.05s linear;
+        &::placeholder {
+          color: #b8bdbe;
+          opacity: 0.75;
+        }
+      }
+      .material-icons {
+        //   color: #b8bdbe;
+        position: relative;
+        left: -7.25rem;
+        margin-right: 0.85rem;
+      }
+    }
+    .input-box-expanded {
+      @include flex-property;
+      flex-direction: column;
+      width: 45rem;;
+      position: relative;
+      border-radius: 0.5rem;
+      border: solid 1px #5f6368;
+      box-sizing: border-box;
+      padding: 0.75rem 0.5rem 0 0.5rem;
+      .row {
+        @include flex-property;
+        width: 100%;
+        padding: 0.75rem 1rem;
+      }
+      .row.three {
+        justify-content: space-between;
+        span {
+          margin-right: 2.25rem;
+        }
+        button {
+          border: none;
+          background-color: inherit;
+          width: 100%;
+          outline: none;
+          font-family: "Source Sans Pro", sans-serif;
+          font-weight: 600;
+          font-size: 1rem;
+          padding: 0.75rem 1.75rem;
+          border-radius: 0.5rem;
+          color: #b8bdbe;
+          &:hover{
+            background-color: #28292c;
+          }
+        }
+      }
+    //   .row.two {
+    //     input {
+    //         &::placeholder {
+    //           font-size: 1rem;
+    //         }
+    //       }
+    //   }
+      input {
+        border: none;
+        background-color: #202124;
+        width: 100%;
+        outline: none;
+        font-size: 1rem;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: 600;
+        color: #b8bdbe;
+        &::placeholder {
+          color: #b8bdbe;
+          opacity: 0.75;
+        }
+      }
+    }
+    // span{
+    //     position: absolute;
+    //     // left: 1rem;
+    //     margin: auto;
+    // }
+  }
+}

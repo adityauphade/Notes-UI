@@ -3,4 +3,9 @@ export default {
   props: {
     sidebarToggle: Boolean,
   },
+  data() {
+    return {
+      active: true,
+    };
+  },
 };
