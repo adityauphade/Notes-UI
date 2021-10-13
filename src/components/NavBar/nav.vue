@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="header-components" id="menu-logo">
-      <span class="material-icons md-light">
+      <span @click="$emit('changeSideBar')" class="material-icons md-light">
         menu
       </span>
       <img

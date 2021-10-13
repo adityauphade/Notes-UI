@@ -1,5 +1,10 @@
 <template>
-  <Nav />
+  <div class="wrapper-class">
+    <Nav v-on:changeSideBar="sidebarToggle=!sidebarToggle" />
+    <div class="body-content">
+      <SideNav :sidebarToggle="sidebarToggle" />
+    </div>
+  </div>
 </template>
 
 <script type="module" src="./Notes.js"></script>
