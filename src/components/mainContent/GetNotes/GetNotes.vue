@@ -1,9 +1,11 @@
 <template>
   <div class="view-notes">
     <div v-for="(note, index) in notes" :key="index" class="note">
-      <h1>{{note.title}}</h1>
-      {{note.body}}
-      {{note.index}}
+      <div class="note-body">
+        <h1>{{note.title}}</h1>
+        <p>{{note.body}}</p>
+      </div>
+      <IconList/>
     </div>
   </div>
 </template>

@@ -1,27 +1,32 @@
 .view-notes {
   display: grid;
-  padding: 1rem;
+  padding: 4rem 2rem 2rem 2rem;
   row-gap: 1rem;
   column-gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   .note {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 0.75rem;
     border: solid 1px #5f6368;
     background-color: inherit;
     border-radius: 0.5rem;
     min-height: 10rem;
-    color: #b8bdbe;
-    font-family: "Source Sans Pro", sans-serif;
-    h1{
+    .note-body {
+      display: flex;
+      flex-direction: column;
+      color: #b8bdbe;
+      font-family: "Source Sans Pro", sans-serif;
+      h1 {
         font-size: 1rem;
         font-weight: 600;
         margin-bottom: 0.5rem;
-    }
-    p{
+      }
+      p {
         font-weight: 400;
-        font-size: 0.75rem;
+        font-size: 0.95rem;
+      }
     }
   }
 }

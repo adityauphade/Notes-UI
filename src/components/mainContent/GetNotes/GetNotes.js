@@ -1,3 +1,5 @@
+import IconList from '../IconList/Icon.vue'
+
 export default{
     name: "GetNotes",
     data(){
@@ -45,5 +47,8 @@ export default{
                 },
             ]
         }
+    },
+    components: {
+        IconList,
     }
 }
