@@ -54,8 +54,8 @@ $inputbox-width: 40rem;
     }
     .row.three {
       justify-content: space-between;
-      span {
-        margin-right: 2.25rem;
+      .icons-left{
+        width: 57.5%;
       }
       button {
         border: none;

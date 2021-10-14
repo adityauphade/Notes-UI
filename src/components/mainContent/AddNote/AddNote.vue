@@ -27,26 +27,7 @@
         <input placeholder="Take a note..." type="text" />
       </div>
       <div class="row three">
-        <div class="icons-left">
-          <span class="material-icons md-light md-inactive md-18">
-            notification_important
-          </span>
-          <span class="material-icons md-light md-inactive md-18">
-            person_add
-          </span>
-          <span class="material-icons md-light md-inactive md-18">
-            palette
-          </span>
-          <span class="material-icons md-light md-inactive md-18">
-            image
-          </span>
-          <span class="material-icons md-light md-inactive md-18">
-            archive
-          </span>
-          <span class="material-icons md-light md-inactive md-18">
-            more_vert
-          </span>
-        </div>
+        <div class="icons-left"><IconList/></div>
         <div class="close-button">
           <button @click="expand = !expand" type="button">Close</button>
         </div>

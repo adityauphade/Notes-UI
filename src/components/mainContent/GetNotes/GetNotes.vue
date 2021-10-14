@@ -1,6 +1,10 @@
 <template>
   <div class="view-notes">
-    <h1>Hella</h1>
+    <div v-for="(note, index) in notes" :key="index" class="note">
+      <h1>{{note.title}}</h1>
+      {{note.body}}
+      {{note.index}}
+    </div>
   </div>
 </template>
 

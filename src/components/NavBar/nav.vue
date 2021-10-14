@@ -13,7 +13,7 @@
     </div>
     <div class="header-components" id="search-icons">
       <div class="search-box">
-        <input type="text" />
+        <input placeholder="Search" type="text" />
         <span class="material-icons md-light">
           search
         </span>
