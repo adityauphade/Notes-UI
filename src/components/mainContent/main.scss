@@ -1,3 +1,5 @@
+$toggle-alignment: 8.25rem;
+
 .notes-dashboard {
   width: 100%;
   height: 100%;
@@ -5,8 +7,10 @@
     margin: 2rem auto 1rem auto;
     @include flex-property;
     justify-content: center;
+    transition: all 0.25s linear;
     .input-box-default {
-      width: 45rem;
+      width: calc(45rem + $toggle-alignment);
+      left: calc($toggle-alignment/2);
       @include flex-property;
       position: relative;
       box-sizing: border-box;
@@ -32,19 +36,19 @@
       .material-icons {
         //   color: #b8bdbe;
         position: relative;
-        left: -7.25rem;
-        margin-right: 0.85rem;
+        left: -($toggle-alignment);
+        margin-right: 0.35rem;
       }
     }
     .input-box-expanded {
       @include flex-property;
       flex-direction: column;
-      width: 45rem;;
+      width: 45rem;
       position: relative;
       border-radius: 0.5rem;
       border: solid 1px #5f6368;
       box-sizing: border-box;
-      padding: 0.75rem 0.5rem 0 0.5rem;
+      // padding: 0.75rem 0.5rem 0 0.5rem;
       .row {
         @include flex-property;
         width: 100%;
@@ -66,18 +70,18 @@
           padding: 0.75rem 1.75rem;
           border-radius: 0.5rem;
           color: #b8bdbe;
-          &:hover{
+          &:hover {
             background-color: #28292c;
           }
         }
       }
-    //   .row.two {
-    //     input {
-    //         &::placeholder {
-    //           font-size: 1rem;
-    //         }
-    //       }
-    //   }
+      //   .row.two {
+      //     input {
+      //         &::placeholder {
+      //           font-size: 1rem;
+      //         }
+      //       }
+      //   }
       input {
         border: none;
         background-color: #202124;

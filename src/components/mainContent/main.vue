@@ -2,21 +2,21 @@
   <div class="notes-dashboard">
     <div class="create-note">
       <div v-if="expand" class="input-box-default">
-          <input  placeholder="Take a note..." type="text" />
-          <span class="material-icons md-light md-inactive">
-            check_box
-          </span>
-          <span class="material-icons md-light md-inactive">
-            brush
-          </span>
-          <span class="material-icons md-light md-inactive">
-            image
-          </span>
+        <input @click="expand=!expand" placeholder="Take a note..." type="text" />
+        <span class="material-icons md-light md-inactive md-21">
+          check_box
+        </span>
+        <span class="material-icons md-light md-inactive md-21">
+          brush
+        </span>
+        <span class="material-icons md-light md-inactive md-21">
+          image
+        </span>
       </div>
       <div v-else class="input-box-expanded">
         <div class="row one">
           <input placeholder="Title" type="text" />
-          <span class="material-icons md-light md-inactive">
+          <span class="material-icons md-light md-inactive md-21">
             push_pin
           </span>
         </div>
@@ -45,7 +45,7 @@
             </span>
           </div>
           <div class="close-button">
-              <button @click="expand=!expand" type="button">Close</button>
+            <button @click="expand = !expand" type="button">Close</button>
           </div>
         </div>
       </div>
