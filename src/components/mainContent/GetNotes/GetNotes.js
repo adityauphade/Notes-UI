@@ -1,4 +1,6 @@
+// import axios from 'axios';
 import IconList from '../IconList/Icon.vue'
+import authFunctions from "@/services/auth-axios.js";
 
 export default{
     name: "GetNotes",
@@ -50,5 +52,9 @@ export default{
     },
     components: {
         IconList,
-    }
+    },
+    async created(){
+        let notesData = await authFunctions.getNotes()
+        console.log('THIS IS XXXXXXXXXXXXXXX', notesData)
+    },
 }

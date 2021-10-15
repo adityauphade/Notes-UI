@@ -37,7 +37,8 @@ export default {
       if (this.v$.$error) {
         console.log(this.v$);
       } else {
-        authFunctions.loginUser(this.form);
+        // localStorage.setItem('login-data', JSON.stringify(this.form))
+        authFunctions.loginUser(this.form) && this.$router.push("/Notes");
         console.log("SUCCESS");
       }
     },
