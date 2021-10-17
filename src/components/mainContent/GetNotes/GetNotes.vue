@@ -1,6 +1,6 @@
 <template>
   <div class="view-notes">
-    <div v-for="(note, index) in notes" :key="index" class="note">
+    <div v-for="(note, index) in notesData" :key="index" class="note">
       <div class="note-body">
         <h1>{{note.title}}</h1>
         <p>{{note.body}}</p>

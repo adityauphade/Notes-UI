@@ -8,6 +8,7 @@ $inputbox-width: 40rem;
   transition: all 0.25s linear;
   .input-box-default {
     width: calc($inputbox-width + $toggle-alignment);
+    
     left: calc($toggle-alignment/2);
     @include flex-property;
     position: relative;
@@ -17,6 +18,7 @@ $inputbox-width: 40rem;
       margin: auto;
       outline: none;
       border: solid 1px #5f6368;
+      box-shadow: 0 0 25px #181818;
       background-color: #202124;
       padding: 0.75rem 1rem;
       width: 100%;
@@ -40,6 +42,7 @@ $inputbox-width: 40rem;
   }
   .input-box-expanded {
     @include flex-property;
+    box-shadow: 0 0 25px #181818;
     flex-direction: column;
     width: $inputbox-width;
     position: relative;
@@ -54,7 +57,7 @@ $inputbox-width: 40rem;
     }
     .row.three {
       justify-content: space-between;
-      .icons-left{
+      .icons-left {
         width: 57.5%;
       }
       button {

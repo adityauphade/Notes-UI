@@ -32,16 +32,20 @@ let authAxios = {
       .catch((err) => console.error(err));
   },
   async getNotes() {
-    let user = JSON.parse(localStorage.getItem('login-data'));
-    console.log(user)
-    await axios.get("/NotesApp/Note", { headers: { 'x-access-token': user.token}})
-      .then((res) => {
-        console.log(res);
-        return res.data;
+    let user = JSON.parse(localStorage.getItem("login-data"));
+    return await axios.get("/NotesApp/Note", {
+      headers: { "x-access-token": user.token },
+    });
+  },
+  async addNote(newNoteData) {
+    let user = JSON.parse(localStorage.getItem("login-data"));
+    await axios
+      .post ("/NotesApp/AddNote", {
+        headers: { "x-access-token": user.token },
+        body: { newNoteData },
       })
-      .catch((err) => console.error(err));
-
-
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   },
 };
 

@@ -2,7 +2,7 @@
   <div class="create-note">
     <div v-if="expand" class="input-box-default">
       <input
-        @click="expand = !expand"
+        @click="expand=!expand"
         placeholder="Take a note..."
         type="text"
       />
@@ -18,18 +18,18 @@
     </div>
     <div v-else class="input-box-expanded">
       <div class="row one">
-        <input placeholder="Title" type="text" />
+        <input placeholder="Title" type="text" id="title" v-model="note.title" />
         <span class="material-icons md-light md-inactive md-21">
           push_pin
         </span>
       </div>
       <div class="row two">
-        <input placeholder="Take a note..." type="text" />
+        <input placeholder="Take a note..." type="text" id="body" v-model="note.body" />
       </div>
       <div class="row three">
         <div class="icons-left"><IconList/></div>
         <div class="close-button">
-          <button @click="expand = !expand" type="button">Close</button>
+          <button @click="onAddNote" type="button">Close</button>
         </div>
       </div>
     </div>
