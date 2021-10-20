@@ -22,7 +22,8 @@ export default {
     onAddNote() {
       this.expand = !this.expand;
       console.log(this.note)
-      authFunctions.addNote(this.note)
+      authFunctions.addNote(this.note) 
+      location.reload();
     },
   },
 };

@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import IconList from "../IconList/Icon.vue";
 import authFunctions from "@/services/auth-axios.js";
 
@@ -17,4 +16,9 @@ export default {
       this.notesData = value.data;
     });
   },
+  methods: {
+    EditNote(){
+      console.log('Edit Notes')
+    }
+  }
 };

@@ -2,14 +2,13 @@ import axios from "axios";
 
 let authAxios = {
   async loginUser(data) {
-    await axios
-      .post("/NotesApp/Login", data)
-      .then((res) => {
-        console.log(res);
-        //storing the login data in local storage
-        localStorage.setItem("login-data", JSON.stringify(res.data));
-      })
-      .catch((err) => console.error(err));
+    return await axios.post("/NotesApp/Login", data);
+    // .then((res) => {
+    //   console.log(res);
+    //   //storing the login data in local storage
+    //   localStorage.setItem("login-data", JSON.stringify(res.data));
+    // })
+    // .catch((err) => console.error(err));
   },
   async getVerificationMail(data) {
     await axios
@@ -39,13 +38,29 @@ let authAxios = {
   },
   async addNote(newNoteData) {
     let user = JSON.parse(localStorage.getItem("login-data"));
+    console.log(user);
+    // console.log(newNoteData)
+    console.log(newNoteData);
     await axios
-      .post ("/NotesApp/AddNote", {
-        headers: { "x-access-token": user.token },
-        body: { newNoteData },
-      })
+      .post(
+        "/NotesApp/AddNote",
+        newNoteData, //BODY CONTENT => BY DEFAULT FIRST PARAMETER TO BE PASSED(AFTER API URL)
+        { headers: { "x-access-token": user.token } }
+      )
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+  },
+  async archiveNote(noteID, token) {
+    return await axios
+      .patch(`/NotesApp/Note/Archive/${noteID}`, {
+        headers: { "x-access-token": token },
+      })
+  },
+  async deleteNote(noteID, token) {
+    return await axios
+      .delete(`/NotesApp/Note/Delete/${noteID}`, {
+        headers: { "x-access-token": token },
+      })
   },
 };
 

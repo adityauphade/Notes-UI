@@ -1,4 +1,32 @@
-.icons{
-    @include flex-property;
-    justify-content: space-between;
+.icons {
+  @include flex-property;
+  justify-content: space-between;
+  position: relative;
+  .image-box {
+    position: absolute;
+    bottom: 110%;
+    // left: 5.25rem;
+    left: 35%;
+    width: 8.5rem;
+    height: 6rem;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    background-color: #202124;
+    border-radius: 5px;
+    border: solid 1px #5f6368;
+    box-shadow: 0 0 25px #181818;
+    .colors {
+      border-radius: 100rem;
+      &:hover {
+        border: solid 1px gray;
+      }
+    }
+  }
+  .image-box.hide {
+    display: none;
+  }
 }

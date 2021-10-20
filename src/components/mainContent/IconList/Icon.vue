@@ -6,16 +6,31 @@
     <span class="material-icons md-light md-inactive md-18">
       person_add
     </span>
-    <span class="material-icons md-light md-inactive md-18">
+    <div class="image-box" :class="[ isToggled ? '' : 'hide']">
+      <div id="black" class="colors"></div>
+      <div id="while" class="colors"></div>
+      <div id="blue" class="colors"></div>
+      <div id="red" class="colors"></div>
+      <div id="yellow" class="colors"></div>
+      <div id="green" class="colors"></div>
+    </div>
+    <span
+      @click="isToggled = !isToggled"
+      id="palette"
+      class="material-icons md-light md-inactive md-18"
+    >
       palette
     </span>
     <span class="material-icons md-light md-inactive md-18">
       image
     </span>
-    <span class="material-icons md-light md-inactive md-18">
+    <span
+      @click="ArchiveNote"
+      class="material-icons md-light md-inactive md-18"
+    >
       archive
     </span>
-    <span class="material-icons md-light md-inactive md-18">
+    <span @click="DeleteNote" class="material-icons md-light md-inactive md-18">
       more_vert
     </span>
   </div>

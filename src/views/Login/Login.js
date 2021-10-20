@@ -32,14 +32,19 @@ export default {
   },
 
   methods: {
-    async onLogin() {
+    onLogin() {
       this.v$.$validate();
       if (this.v$.$error) {
         console.log(this.v$);
       } else {
-        // localStorage.setItem('login-data', JSON.stringify(this.form))
-        authFunctions.loginUser(this.form) && this.$router.push("/Notes");
-        console.log("SUCCESS");
+        authFunctions
+          .loginUser(this.form)
+          .then((res) => {
+            console.log(res);
+            localStorage.setItem("login-data", JSON.stringify(res.data));
+            this.$router.push("/Notes");
+          })
+          .catch((err) => console.error(err));
       }
     },
   },

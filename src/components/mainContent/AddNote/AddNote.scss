@@ -8,7 +8,6 @@ $inputbox-width: 40rem;
   transition: all 0.25s linear;
   .input-box-default {
     width: calc($inputbox-width + $toggle-alignment);
-    
     left: calc($toggle-alignment/2);
     @include flex-property;
     position: relative;
