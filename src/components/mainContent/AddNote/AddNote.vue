@@ -27,7 +27,7 @@
         <input placeholder="Take a note..." type="text" id="body" v-model="note.body" />
       </div>
       <div class="row three">
-        <div class="icons-left"><IconList/></div>
+        <div class="icons-left"><IconList v-on:changeArchive="note.isArchived=!note.isArchived"/></div>
         <div class="close-button">
           <button @click="onAddNote" type="button">Close</button>
         </div>

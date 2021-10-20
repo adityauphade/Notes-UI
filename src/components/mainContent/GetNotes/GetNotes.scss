@@ -14,6 +14,7 @@
     border-radius: 0.5rem;
     min-height: 10rem;
     .note-body {
+      max-width: 15vw;
       cursor: pointer;
       display: flex;
       flex-direction: column;

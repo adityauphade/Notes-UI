@@ -6,16 +6,22 @@
     <span class="material-icons md-light md-inactive md-18">
       person_add
     </span>
-    <div class="image-box" :class="[ isToggled ? '' : 'hide']">
+    <div
+      class="image-box"
+      :class="[isToggled ? '' : 'hide']"
+      @mouseover="isToggled = true"
+      @mouseleave="isToggled = false"
+    >
       <div id="black" class="colors"></div>
-      <div id="while" class="colors"></div>
+      <div id="gray" class="colors"></div>
       <div id="blue" class="colors"></div>
       <div id="red" class="colors"></div>
       <div id="yellow" class="colors"></div>
       <div id="green" class="colors"></div>
     </div>
     <span
-      @click="isToggled = !isToggled"
+      @mouseover="isToggled = true"
+      @mouseleave="isToggled = false"
       id="palette"
       class="material-icons md-light md-inactive md-18"
     >

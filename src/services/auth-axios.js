@@ -52,9 +52,7 @@ let authAxios = {
   },
   async archiveNote(noteID, token) {
     return await axios
-      .patch(`/NotesApp/Note/Archive/${noteID}`, {
-        headers: { "x-access-token": token },
-      })
+      .patch(`/NotesApp/Note/Archive/${noteID}`, {headers: { "x-access-token": token }})
   },
   async deleteNote(noteID, token) {
     return await axios

@@ -9,8 +9,9 @@ export default {
       expand: true,
       note: {
         title: '',
-        body: ''
-      }
+        body: '',
+        isArchived: false,
+      },
     };
   },
 
@@ -20,7 +21,7 @@ export default {
 
   methods: {
     onAddNote() {
-      this.expand = !this.expand;
+      this.expand=!this.expand;
       console.log(this.note)
       authFunctions.addNote(this.note) 
       location.reload();

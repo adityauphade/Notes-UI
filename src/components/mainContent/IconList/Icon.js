@@ -21,7 +21,8 @@ export default {
           .then((res) => console.log(res))
           .catch((err) => console.log(err));
       } else {
-        console.log("id is NOT present");
+        console.log('Note to be archived in Add Note component')
+        this.$emit('changeArchive')
       }
     },
     DeleteNote() {
