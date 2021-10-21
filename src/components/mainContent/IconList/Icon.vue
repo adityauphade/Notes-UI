@@ -1,13 +1,14 @@
 <template>
   <div class="icons">
-    <span class="material-icons md-light md-inactive md-18">
+    <span class="material-icons-outlined md-light md-inactive md-18">
       notification_important
     </span>
-    <span class="material-icons md-light md-inactive md-18">
+    <span class="material-icons-outlined md-light md-inactive md-18">
       person_add
     </span>
+
     <div
-      class="image-box"
+      class="color-box"
       :class="[isToggled ? '' : 'hide']"
       @mouseover="isToggled = true"
       @mouseleave="isToggled = false"
@@ -19,24 +20,26 @@
       <div id="yellow" class="colors"></div>
       <div id="green" class="colors"></div>
     </div>
+
     <span
       @mouseover="isToggled = true"
       @mouseleave="isToggled = false"
       id="palette"
-      class="material-icons md-light md-inactive md-18"
+      class="material-icons-outlined md-light md-inactive md-18"
     >
       palette
     </span>
-    <span class="material-icons md-light md-inactive md-18">
+    
+    <span class="material-icons-outlined md-light md-inactive md-18">
       image
     </span>
     <span
       @click="ArchiveNote"
-      class="material-icons md-light md-inactive md-18"
+      class="material-icons-outlined md-light md-inactive md-18"
     >
       archive
     </span>
-    <span @click="DeleteNote" class="material-icons md-light md-inactive md-18">
+    <span @click="DeleteNote" class="material-icons-outlined md-light md-inactive md-18">
       more_vert
     </span>
   </div>

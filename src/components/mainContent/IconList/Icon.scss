@@ -4,7 +4,8 @@ $color-padding: 9px;
   @include flex-property;
   justify-content: space-between;
   position: relative;
-  .image-box {
+  width: 100%;
+  .color-box {
     position: absolute;
     bottom: 99%;
     // left: 5.25rem;
@@ -28,26 +29,26 @@ $color-padding: 9px;
         border: solid 2px gray;
       }
     }
-    #black{
-        background: #151516;
+    #black {
+      background: #202124;
     }
-    #gray{
-        background: #3c3f43;
+    #gray {
+      background: #3c3f43;
     }
-    #blue{
-        background: #2d555e;
+    #blue {
+      background: #2d555e;
     }
-    #red{
-        background: #5c2b29;
+    #red {
+      background: #5c2b29;
     }
-    #yellow{
-        background: #635d19;
+    #yellow {
+      background: #635d19;
     }
-    #green{
-        background: #345920;
+    #green {
+      background: #345920;
     }
   }
-  .image-box.hide {
+  .color-box.hide {
     display: none;
   }
 }

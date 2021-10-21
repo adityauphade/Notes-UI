@@ -50,15 +50,21 @@ let authAxios = {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   },
-  async archiveNote(noteID, token) {
-    return await axios
-      .patch(`/NotesApp/Note/Archive/${noteID}`, {headers: { "x-access-token": token }})
+  async archiveNote(noteID, user) {
+    return await axios.patch(`/NotesApp/Note/Archive/${noteID}`, user, {
+      headers: { "x-access-token": user.token },
+    });
   },
   async deleteNote(noteID, token) {
-    return await axios
-      .delete(`/NotesApp/Note/Delete/${noteID}`, {
-        headers: { "x-access-token": token },
-      })
+    return await axios.delete(`/NotesApp/Note/Delete/${noteID}`, {
+      headers: { "x-access-token": token },
+    });
+  },
+  async editNote(note) {
+    let user = JSON.parse(localStorage.getItem("login-data"));
+    return await axios.patch(`/NotesApp/Note/Edit/${note._id}`, note, {
+      headers: { "x-access-token": user.token },
+    });
   },
 };
 

@@ -10,6 +10,10 @@ export default{
     data(){
         return{
             expand: true,
+            notesArray: [{}]
         }
+    },
+    mounted(){
+        //API function
     }
 }

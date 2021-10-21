@@ -22,8 +22,9 @@ export default {
   methods: {
     onAddNote() {
       this.expand=!this.expand;
+      // this.$emit('AddNoteToggled')
       console.log(this.note)
-      authFunctions.addNote(this.note) 
+      authFunctions.addNote(this.note)    
       location.reload();
     },
   },
