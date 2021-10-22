@@ -17,7 +17,7 @@ export default {
   },
   created() {
     authFunctions.getNotes().then((value) => {
-      this.notesData = value.data;
+      this.notesData = value.data.reverse();
     });
   },
   methods: {

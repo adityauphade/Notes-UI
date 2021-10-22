@@ -16,7 +16,7 @@
         image
       </span>
     </div>
-    <div v-else class="input-box-expanded">
+    <div v-else class="input-box-expanded" :style="noteColor(note.colour)">
       <div class="row one">
         <input placeholder="Title" type="text" id="title" v-model="note.title" />
         <span class="material-icons md-light md-inactive md-21">
@@ -27,7 +27,7 @@
         <input placeholder="Take a note..." type="text" id="body" v-model="note.body" />
       </div>
       <div class="row three">
-        <div class="icons-left"><IconList v-on:changeArchive="note.isArchived=!note.isArchived"/></div>
+        <div class="icons-left"><IconList v-on:updatedColor="updatedColor" v-on:changeArchive="note.isArchived=!note.isArchived"/></div>
         <div class="close-button">
           <button @click="onAddNote" type="button">Close</button>
         </div>

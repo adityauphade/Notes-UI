@@ -11,6 +11,7 @@ export default {
         title: '',
         body: '',
         isArchived: false,
+        colour: ''
       },
     };
   },
@@ -27,5 +28,14 @@ export default {
       authFunctions.addNote(this.note)    
       location.reload();
     },
+    noteColor(color){
+      return {
+        'background': color,
+      }
+    },
+    updatedColor(e){
+      console.log('THIS IS THE UPDATED COLOR => ', e)
+      this.note.colour = e;
+    }
   },
 };

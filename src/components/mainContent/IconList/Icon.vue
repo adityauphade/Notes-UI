@@ -13,12 +13,12 @@
       @mouseover="isToggled = true"
       @mouseleave="isToggled = false"
     >
-      <div id="black" class="colors"></div>
-      <div id="gray" class="colors"></div>
-      <div id="blue" class="colors"></div>
-      <div id="red" class="colors"></div>
-      <div id="yellow" class="colors"></div>
-      <div id="green" class="colors"></div>
+      <div @click="$emit('updatedColor','#202124')" id="black" class="colors"></div>
+      <div @click="$emit('updatedColor','#3c3f43')" id="gray" class="colors"></div>
+      <div @click="$emit('updatedColor','#2d555e')" id="blue" class="colors"></div>
+      <div @click="$emit('updatedColor','#5c2b29')" id="red" class="colors"></div>
+      <div @click="$emit('updatedColor','#635d19')" id="yellow" class="colors"></div>
+      <div @click="$emit('updatedColor','#345920')" id="green" class="colors"></div>
     </div>
 
     <span
