@@ -1,6 +1,6 @@
 import AddNote from "./AddNote/AddNote.vue";
 import GetNotes from "./GetNotes/GetNotes.vue";
-import authFunctions from "@/services/auth-axios.js";
+// import authFunctions from "@/services/auth-axios.js";
 
 export default {
   name: "main",
@@ -20,7 +20,7 @@ export default {
     newNoteAdded(e) {
       console.log(e);
       this.newNote = e;
-      authFunctions.addNote(this.newNote);
+    //   authFunctions.addNote(this.newNote);
       this.isAdded = !this.isAdded;
     },
   },

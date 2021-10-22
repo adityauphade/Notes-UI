@@ -1,4 +1,6 @@
 import IconList from "../IconList/Icon.vue";
+import authFunctions from "@/services/auth-axios.js";
+
 
 export default {
   name: "AddNote",
@@ -10,7 +12,8 @@ export default {
         title: '',
         body: '',
         isArchived: false,
-        colour: ''
+        colour: '',
+        isDeleted: false
       },
     };
   },
@@ -23,8 +26,9 @@ export default {
     onAddNote() {
       this.expand=!this.expand;
       this.$emit('newNoteAdded', this.note)
+      authFunctions.addNote(this.note);
       console.log(this.note)
-      location.reload();
+      // location.reload();
     },
     noteColor(color){
       return {
