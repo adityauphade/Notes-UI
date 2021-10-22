@@ -1,7 +1,7 @@
 <template>
   <div class="notes-dashboard">
-    <AddNote/>    <!-- passing API call function  -->
-    <GetNotes/>   <!-- passing the Array of Notes as a Prop  -->
+    <AddNote v-on:newNoteAdded="newNoteAdded"/>    <!-- passing API call function  -->
+    <GetNotes :isAdded="isAdded"/>   <!-- passing the Array of Notes as a Prop  -->
   </div>
 </template>
 

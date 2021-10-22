@@ -12,12 +12,27 @@ export default {
       selectedNote: {}
     };
   },
+  props: {
+    isAdded: Boolean,
+  },
+  watcher:{
+    isAdded(){
+      authFunctions.getNotes().then((value) => {
+        this.notesData = value.data.reverse();
+      });
+    }
+  },
   components: {
     IconList, EditNote
   },
   created() {
     authFunctions.getNotes().then((value) => {
-      this.notesData = value.data.reverse();
+      this.notesData = value.data.filter(note => note.isDeleted != true).reverse();
+    });
+  },
+  updated() {
+    authFunctions.getNotes().then((value) => {
+      this.notesData = value.data.filter(note => note.isDeleted != true).reverse();
     });
   },
   methods: {
