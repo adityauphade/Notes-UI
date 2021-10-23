@@ -1,0 +1,41 @@
+
+.view-notes {
+  display: grid;
+  padding: 4rem 2rem 2rem 2rem;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+  .note {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border: solid 1px #5f6368;
+    background-color: inherit;
+    border-radius: 0.5rem;
+    min-height: 10rem;
+
+    //background color => should be dynamic
+    // background: $note-bgcolor;
+
+    // max-width: 15vw;
+    .note-body {
+      // max-width: 15vw;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      color: #b8bdbe;
+      font-family: "Source Sans Pro", sans-serif;
+      h1 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        font-weight: 400;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

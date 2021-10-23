@@ -1,55 +1,113 @@
 header {
-    background: #202124;
-    width: 100%;
-    padding: 1rem 0.5rem;
-    border-bottom: solid 1px #5f6368;
+  background: #202124;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  border-bottom: solid 1px #5f6368;
+  @include flex-property;
+  flex-direction: row-wrap;
+  justify-content: space-between;
+  font-family: "Source Sans Pro", sans-serif;
+  .header-components {
     @include flex-property;
-    flex-direction: row-wrap;
-    justify-content: space-between;
-    font-family: "Source Sans Pro", sans-serif;
-    .header-components {
-      @include flex-property;
-      h2 {
-        color: #fff;
-        font-size: 1.5rem;
-        font-weight: 400;
-      }
-      span {
-        padding: 0 1rem;
-        cursor: pointer;
-      }
+    h2 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 400;
     }
-    #search-icons {
-      .search-box {
-        min-width: 65vw;
-        @include flex-property;
+    span {
+      padding: 0 1rem;
+      cursor: pointer;
+    }
+  }
+  #search-icons {
+    .search-box {
+      min-width: 65vw;
+      @include flex-property;
+      position: relative;
+      input {
         position: relative;
-        input {
-          position: relative;
-          width: 60%;
-          margin-right: 0;
-          right: 0;
-          outline: none;
-          background-color: #525355;
-          padding: 1rem 1.75rem 1rem 3.5rem;
-          border: none;
-          border-radius: 0.5rem;
-          color: #fff;
+        width: 60%;
+        margin-right: 0;
+        right: 0;
+        outline: none;
+        background-color: #525355;
+        padding: 1rem 1.75rem 1rem 3.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        color: #b8bdbe;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: "Source Sans Pro", sans-serif;
+        transition: all 0.05s linear;
+        &::placeholder {
           font-size: 1rem;
           font-family: "Source Sans Pro", sans-serif;
-          transition: all 0.05s linear;
+          color: #b8bdbe;
+          font-weight: 600;
         }
-        input:focus{
-          background: #fff;
+      }
+      input:focus {
+        background: #fff;
+        color: #525355;
+        &::placeholder {
           color: #525355;
         }
-        input:focus ~ span{
-          color: #525355;
-        }
-        span {
-          position: absolute;
-          left: 0.25rem;
+      }
+      input:focus ~ span {
+        color: #525355;
+      }
+      span {
+        position: absolute;
+        left: 0.25rem;
+      }
+    }
+  }
+  #profile {
+    position: relative;
+    .userInfo.hide {
+      display: none;
+    }
+    .userInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 100;
+      position: absolute;
+      top: 4.25rem;
+      right: 0.2rem;
+      min-width: 11rem;
+      // height: 10rem;
+      box-shadow: 0 0 25px #181818;
+      background: #202124;
+      border-radius: 5px;
+      border: solid 1px #5f6368;
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      h1 {
+        // display: block;
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+      .logo,
+      .name,
+      .logoutButton {
+        padding-top: 1.5rem;
+        button {
+          border: none;
+          background-color: inherit;
+          width: 100%;
+          outline: none;
+          font-family: "Source Sans Pro", sans-serif;
+          font-weight: 600;
+          font-size: 0.975rem;
+          padding: 0.6rem 1.5rem;
+          border-radius: 0.5rem;
+          color: #b8bdbe;
+          &:hover {
+            background-color: #28292c;
+          }
         }
       }
     }
   }
+}

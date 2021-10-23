@@ -13,7 +13,7 @@
     </div>
     <div class="header-components" id="search-icons">
       <div class="search-box">
-        <input type="text" />
+        <input placeholder="Search" type="text" />
         <span class="material-icons md-light">
           search
         </span>
@@ -31,12 +31,25 @@
       </div>
     </div>
     <div class="header-components" id="profile">
-      <span class="material-icons md-light">
+      <span class="material-icons md-light ">
         apps
       </span>
-      <span class="material-icons md-light">
+      <span @click="isToggled=!isToggled" class="material-icons md-light">
         account_circle
       </span>
+      <div class="userInfo" :class="[isToggled ? '' : 'hide']" >
+        <div class="logo">
+          <span class="material-icons md-light md-36">
+            account_circle
+          </span>
+        </div>
+        <div class="name">
+          <h1>{{firstName + ' ' + lastName}}</h1>
+        </div>
+        <div class="logoutButton">
+          <button @click="logout">Sign out</button>
+        </div>
+      </div>
     </div>
   </header>
 </template>

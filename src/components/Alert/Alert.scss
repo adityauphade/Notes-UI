@@ -1,0 +1,32 @@
+.alert-wrapper {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 7.5%;
+  width: 100%;
+  .alert-box {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #cfcfcf;
+    h1{
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.925rem;
+      font-weight: 700;
+    }
+    &.success {
+      background: #55ff8583;
+      border: solid 1.5px #3cb15e;
+      h1{
+        color: #3cb15e;
+      }
+    }
+    &.error {
+      background: #ff6c5f7e;
+      border: solid 2.5px #f34939;
+      h1{
+        color: #f34939;
+      }
+    }
+  }
+}

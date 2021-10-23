@@ -6,41 +6,20 @@ $inputbox-width: 40rem;
   @include flex-property;
   justify-content: center;
   transition: all 0.25s linear;
-  .input-box-default {
-    width: calc($inputbox-width + $toggle-alignment);
-    left: calc($toggle-alignment/2);
-    @include flex-property;
-    position: relative;
-    box-sizing: border-box;
-
-    input {
-      margin: auto;
-      outline: none;
-      border: solid 1px #5f6368;
-      box-shadow: 0 0 25px #181818;
-      background-color: #202124;
-      padding: 0.75rem 1rem;
-      width: 100%;
-      border-radius: 0.5rem;
-      color: #b8bdbe;
-      font-size: 1rem;
-      font-family: "Source Sans Pro", sans-serif;
-      font-weight: 600;
-      transition: all 0.05s linear;
-      &::placeholder {
-        color: #b8bdbe;
-        opacity: 0.75;
-      }
-    }
-    .material-icons {
-      //   color: #b8bdbe;
-      position: relative;
-      left: -($toggle-alignment);
-      margin-right: 0.35rem;
-    }
-  }
+  position: absolute;
+  z-index: 5;
+  background: rgba(32, 33, 36, 0.75);
+  // opacity: ;
+  // box-shadow: 0 0 25px #181818;
+  height: 98vh;
+  width: 100%;
   .input-box-expanded {
+    position: relative;
+    bottom: 12.5rem;
+    z-index: 100;
     @include flex-property;
+    opacity: 1 !important;
+    background: #202124;
     box-shadow: 0 0 25px #181818;
     flex-direction: column;
     width: $inputbox-width;
@@ -48,7 +27,6 @@ $inputbox-width: 40rem;
     border-radius: 0.5rem;
     border: solid 1px #5f6368;
     box-sizing: border-box;
-    // padding: 0.75rem 0.5rem 0 0.5rem;
     .row {
       @include flex-property;
       width: 100%;
@@ -90,4 +68,7 @@ $inputbox-width: 40rem;
       }
     }
   }
+}
+.create-note.hide{
+  display: none;
 }

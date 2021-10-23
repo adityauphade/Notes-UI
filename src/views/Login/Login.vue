@@ -1,4 +1,5 @@
 <template>
+  <!-- <Alert :status="status" :message="message" /> -->
   <div class="outer-page">
     <div class="CreateAccountBox">
       <form>

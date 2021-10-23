@@ -1,0 +1,54 @@
+$color-padding: 9px;
+
+.icons {
+  @include flex-property;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  .color-box {
+    position: absolute;
+    bottom: 99%;
+    // left: 5.25rem;
+    left: 35%;
+    width: 8.5rem;
+    height: 6rem;
+    padding: $color-padding;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: $color-padding;
+    column-gap: $color-padding;
+    background-color: #202124;
+    border-radius: 5px;
+    border: solid 1px #5f6368;
+    box-shadow: 0 0 25px #181818;
+    .colors {
+      cursor: pointer;
+      border-radius: 100rem;
+      &:hover {
+        border: solid 2px gray;
+      }
+    }
+    #black {
+      background: #202124;
+    }
+    #gray {
+      background: #3c3f43;
+    }
+    #blue {
+      background: #2d555e;
+    }
+    #red {
+      background: #5c2b29;
+    }
+    #yellow {
+      background: #635d19;
+    }
+    #green {
+      background: #345920;
+    }
+  }
+  .color-box.hide {
+    display: none;
+  }
+}
